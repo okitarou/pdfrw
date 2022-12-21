@@ -12,7 +12,7 @@ python -m tests.test_pdfstring
 
 
 from pdfrw.uncompress import flate_png, flate_png_impl
-from pdfrw.py23_diffs import zlib, xrange, from_array, convert_load, convert_store
+from pdfrw.py23_diffs import zlib,  from_array, convert_load, convert_store
 
 import unittest
 import base64
@@ -33,9 +33,9 @@ def filepath(filename):
 def create_data(nc=1, nr=1, bpc=8, ncolors=1, filter_type=0):
     pixel_size = (bpc * ncolors + 7) // 8
     data = []
-    for r in xrange(nr):
+    for r in range(nr):
         data.append(filter_type if r > 0 else 0) # filter byte
-        for c in xrange(nc * pixel_size):
+        for c in range(nc * pixel_size):
             data.append(r * nc * pixel_size + c * pixel_size)
     data = array.array('B', data)
     logging.debug("Data: %r" % (data))

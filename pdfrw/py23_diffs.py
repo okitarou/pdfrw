@@ -42,10 +42,10 @@ try:
 except AttributeError:
     iteritems = dict.items
 
-try:
-    xrange = xrange
-except NameError:
-    xrange = range
+# try:
+#     xrange = xrange
+# except NameError:
+#     xrange = range
 
 try:
     intern = intern
